@@ -1,0 +1,23 @@
+{
+  "name": "guess-the-number-name",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/vladagamova35-droid/guess-the-number-name#readme",
+  "bugs": {
+    "url": "https://github.com/vladagamova35-droid/guess-the-number-name/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladagamova35-droid/guess-the-number-name.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "guess": "bin/guess.js"
+  }
+}
