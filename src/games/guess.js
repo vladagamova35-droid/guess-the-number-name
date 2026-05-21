@@ -13,21 +13,21 @@ const getRecords = () => {
 }
 
 const showRecords = () => {
-  console.log('\n🏆 HIGH SCORES (TOP-5):\n-----------------------------------------\nPlace | Name           | Attempts | Time \n-----------------------------------------');
+  console.log('\n🏆 HIGH SCORES (TOP-10):\n-----------------------------------------\nPlace | Name           | Attempts | Time \n-----------------------------------------');
   
   const records = getRecords()
   if (!records.length) console.log('  No records yet. Be the first!')
   
   records.forEach(({ name, attempts, timeStr }, i) => {
-    console.log(` ${(i + 1).toString().padEnd(5)} | ${name.substring(0, 14).padEnd(14)} | ${attempts.toString().padEnd(8)} | ${timeStr} `);
-  });
+    console.log(` ${(i + 1).toString().padEnd(5)} | ${name.substring(0, 14).padEnd(14)} | ${attempts.toString().padEnd(8)} | ${timeStr} `)
+  })
   console.log('-----------------------------------------\n')
 }
 
 const saveRecord = (name, attempts, timeSec) => {
   const records = [...getRecords(), { name, attempts, timeSec, timeStr: formatTime(timeSec) }]
   records.sort((a, b) => a.attempts - b.attempts || a.timeSec - b.timeSec)
-  fs.writeFileSync(RECORDS_FILE, JSON.stringify(records.slice(0, 5), null, 2))
+  fs.writeFileSync(RECORDS_FILE, JSON.stringify(records.slice(0, 10), null, 2))
 }
 
 export const runGuessGame = async (playerName) => {
